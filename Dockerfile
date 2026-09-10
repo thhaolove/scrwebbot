@@ -1,6 +1,6 @@
 FROM php:8.2-fpm
 
-# Cài đặt các extension cần thiết cho PHP (ví dụ: pdo, pdo_mysql, gd, zip...)
+# Cài đặt các extension cần thiết và Nginx
 RUN apt-get update && apt-get install -y \
     nginx \
     libpng-dev \
@@ -10,15 +10,16 @@ RUN apt-get update && apt-get install -y \
     unzip \
     && docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
 
-# Cấu hình thư mục làm việc
 WORKDIR /var/www/html
 
-# Copy toàn bộ mã nguồn vào container
+# Copy toàn bộ mã nguồn vào
 COPY . .
 
-# Cấu hình Nginx trỏ vào thư mục gốc của code (hoặc thư mục public nếu code của bạn yêu cầu)
-# Lưu ý: Nếu code của bạn chạy trực tiếp từ thư mục gốc, để nguyên /var/www/html. 
-# Nếu code yêu cầu trỏ vào thư mục public, sửa thành /var/www/html/public
+# Cấp quyền đọc/ghi và quyền thực thi cho toàn bộ thư mục web để PHP-FPM đọc được
+RUN chown -R www-data:www-data /var/www/html \
+    && chmod -R 755 /var/www/html
+
+# Cấu hình Nginx
 RUN echo 'server {\n\
     listen 80;\n\
     index index.php index.html;\n\
@@ -36,5 +37,4 @@ RUN echo 'server {\n\
 
 EXPOSE 80
 
-# Khởi động Nginx và PHP-FPM cùng lúc khi container chạy
 CMD service nginx start && php-fpm
