@@ -1,0 +1,343 @@
+/**
+ * Dark Mode CSS for Authentication Pages
+ * Applies to: login, register, verify_2fa, reset-password, verify_otp, forgot-password
+ * Only active when [data-theme="dark"] is set
+ * CHỈ SỬA MÀU SẮC - KHÔNG CAN THIỆP CSS KHÁC
+ */
+
+/* ============================================
+   Base Page Styles - Dark Mode
+   ============================================ */
+[data-theme="dark"] .user-form-part,
+[data-theme="dark"] .auth-page-wrapper,
+[data-theme="dark"] section.inner-section.profile-part {
+    background: #0f172a;
+}
+
+/* ============================================
+   Auth Card Styles
+   ============================================ */
+[data-theme="dark"] .user-form-card {
+    background: #1e293b;
+    border-color: #334155;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .user-form-card:hover {
+    border-color: #475569;
+}
+
+/* Card in Velzon/Admin style pages */
+[data-theme="dark"] .auth-page-wrapper .card {
+    background: #1e293b;
+    border-color: #334155;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .auth-page-wrapper .card-body {
+    background: transparent;
+}
+
+/* ============================================
+   Form Title Styles
+   ============================================ */
+[data-theme="dark"] .user-form-title h2 {
+    color: #f1f5f9;
+}
+
+[data-theme="dark"] .user-form-title p {
+    color: #94a3b8;
+}
+
+/* Velzon style title */
+[data-theme="dark"] .auth-page-wrapper .text-muted {
+    color: #94a3b8 !important;
+}
+
+/* ============================================
+   Form Input Styles
+   ============================================ */
+[data-theme="dark"] .user-form .form-control,
+[data-theme="dark"] .auth-page-wrapper .form-control {
+    background: #0f172a;
+    border-color: #334155;
+    color: #f1f5f9;
+}
+
+[data-theme="dark"] .user-form .form-control:focus,
+[data-theme="dark"] .auth-page-wrapper .form-control:focus {
+    background: #0f172a;
+    border-color: #6b7280;
+    box-shadow: 0 0 0 3px rgba(107, 114, 128, 0.2);
+    color: #f1f5f9;
+}
+
+[data-theme="dark"] .user-form .form-control::placeholder,
+[data-theme="dark"] .auth-page-wrapper .form-control::placeholder {
+    color: #6b7280;
+}
+
+/* Autofill styles for dark mode */
+[data-theme="dark"] .user-form .form-control:-webkit-autofill,
+[data-theme="dark"] .user-form .form-control:-webkit-autofill:hover,
+[data-theme="dark"] .user-form .form-control:-webkit-autofill:focus,
+[data-theme="dark"] .auth-page-wrapper .form-control:-webkit-autofill,
+[data-theme="dark"] .auth-page-wrapper .form-control:-webkit-autofill:hover,
+[data-theme="dark"] .auth-page-wrapper .form-control:-webkit-autofill:focus {
+    -webkit-text-fill-color: #f1f5f9;
+    -webkit-box-shadow: 0 0 0px 1000px #0f172a inset;
+}
+
+/* Form labels */
+[data-theme="dark"] .user-form label,
+[data-theme="dark"] .auth-page-wrapper .form-label {
+    color: #d1d5db;
+}
+
+/* ============================================
+   Button Styles - CHỈ SỬA MÀU
+   ============================================ */
+[data-theme="dark"] .user-form .form-button button:disabled {
+    background: #374151;
+    color: #6b7280;
+}
+
+/* ============================================
+   Links Styles
+   ============================================ */
+[data-theme="dark"] .user-form .form-button p {
+    color: #94a3b8;
+}
+
+/* User Form Remind Box */
+[data-theme="dark"] .user-form-remind {
+    background: #1e293b;
+    border-color: #334155;
+}
+
+[data-theme="dark"] .user-form-remind p {
+    color: #94a3b8;
+}
+
+[data-theme="dark"] .user-form .form-button p a,
+[data-theme="dark"] .user-form-remind p a,
+[data-theme="dark"] .user-form a {
+    color: var(--primary);
+}
+
+[data-theme="dark"] .user-form .form-button p a:hover,
+[data-theme="dark"] .user-form-remind p a:hover,
+[data-theme="dark"] .user-form a:hover {
+    color: var(--primary1);
+}
+
+/* Velzon links */
+[data-theme="dark"] .auth-page-wrapper a {
+    color: var(--primary);
+}
+
+[data-theme="dark"] .auth-page-wrapper a:hover {
+    color: var(--primary1);
+}
+
+/* ============================================
+   Footer Styles
+   ============================================ */
+[data-theme="dark"] .user-form-footer p {
+    color: #6b7280;
+}
+
+[data-theme="dark"] .user-form-footer a {
+    color: #94a3b8;
+}
+
+/* ============================================
+   Social Login Styles
+   ============================================ */
+[data-theme="dark"] .social-login-divider::before,
+[data-theme="dark"] .social-login-divider::after {
+    background: #334155;
+}
+
+[data-theme="dark"] .social-login-divider span {
+    color: #6b7280;
+}
+
+[data-theme="dark"] .btn-google-signin {
+    background: #0f172a;
+    border-color: #334155;
+    color: #d1d5db;
+}
+
+[data-theme="dark"] .btn-google-signin:hover {
+    background: #374151;
+    border-color: #4b5563;
+    color: #f1f5f9;
+}
+
+/* ============================================
+   Password Strength Indicator
+   ============================================ */
+[data-theme="dark"] #password-strength-status.weak {
+    background: rgba(248, 113, 113, 0.15);
+    border-color: rgba(248, 113, 113, 0.3);
+    color: #f87171;
+}
+
+[data-theme="dark"] #password-strength-status.medium {
+    background: rgba(251, 191, 36, 0.15);
+    border-color: rgba(251, 191, 36, 0.3);
+    color: #fbbf24;
+}
+
+[data-theme="dark"] #password-strength-status.strong {
+    background: rgba(52, 211, 153, 0.15);
+    border-color: rgba(52, 211, 153, 0.3);
+    color: #34d399;
+}
+
+/* ============================================
+   Terms & Policy Checkbox
+   ============================================ */
+[data-theme="dark"] .agree-terms-label {
+    color: #94a3b8;
+}
+
+[data-theme="dark"] .terms-link {
+    color: var(--primary);
+}
+
+/* ============================================
+   Policy Modal Dark Mode
+   ============================================ */
+[data-theme="dark"] .policy-modal .policy-modal-dialog {
+    background: #1e293b;
+    border-color: #334155;
+}
+
+[data-theme="dark"] .policy-modal .policy-modal-header {
+    border-bottom-color: #334155;
+}
+
+[data-theme="dark"] .policy-modal .policy-modal-header h5 {
+    color: #f1f5f9;
+}
+
+[data-theme="dark"] .policy-modal .policy-modal-close {
+    color: #94a3b8;
+}
+
+[data-theme="dark"] .policy-modal .policy-content-scroll {
+    color: #94a3b8;
+}
+
+[data-theme="dark"] .policy-modal .policy-content-scroll h1,
+[data-theme="dark"] .policy-modal .policy-content-scroll h2,
+[data-theme="dark"] .policy-modal .policy-content-scroll h3,
+[data-theme="dark"] .policy-modal .policy-content-scroll h4 {
+    color: #f1f5f9;
+}
+
+[data-theme="dark"] .policy-modal .policy-modal-footer {
+    border-top-color: #334155;
+}
+
+[data-theme="dark"] .policy-modal .btn-secondary {
+    background: #0f172a;
+    border-color: #334155;
+    color: #94a3b8;
+}
+
+[data-theme="dark"] .policy-modal .btn-secondary:hover {
+    background: #374151;
+    border-color: #4b5563;
+}
+
+[data-theme="dark"] .policy-modal .btn-primary:disabled {
+    background: #374151;
+    color: #6b7280;
+}
+
+/* ============================================
+   Alert Styles
+   ============================================ */
+[data-theme="dark"] .auth-page-wrapper .alert-info {
+    background: rgba(96, 165, 250, 0.15);
+    border-color: rgba(96, 165, 250, 0.3);
+    color: #60a5fa;
+}
+
+[data-theme="dark"] .auth-page-wrapper .alert-warning {
+    background: rgba(251, 191, 36, 0.15);
+    border-color: rgba(251, 191, 36, 0.3);
+    color: #fbbf24;
+}
+
+[data-theme="dark"] .auth-page-wrapper .alert-danger {
+    background: rgba(248, 113, 113, 0.15);
+    border-color: rgba(248, 113, 113, 0.3);
+    color: #f87171;
+}
+
+[data-theme="dark"] .auth-page-wrapper .alert-success {
+    background: rgba(52, 211, 153, 0.15);
+    border-color: rgba(52, 211, 153, 0.3);
+    color: #34d399;
+}
+
+/* ============================================
+   2FA & OTP Page Specific Styles
+   ============================================ */
+[data-theme="dark"] .auth-page-wrapper .auth-one-bg {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+[data-theme="dark"] .auth-page-wrapper .auth-one-bg .bg-overlay {
+    background: transparent;
+}
+
+[data-theme="dark"] .auth-page-wrapper .auth-one-bg .shape svg path {
+    fill: #1e293b;
+}
+
+[data-theme="dark"] .auth-page-wrapper .text-white-50 {
+    color: #94a3b8 !important;
+}
+
+/* ============================================
+   SweetAlert2 Dark Mode Override
+   ============================================ */
+[data-theme="dark"] .swal2-popup {
+    background: #1e293b !important;
+    border-color: #334155 !important;
+}
+
+[data-theme="dark"] .swal2-title {
+    color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .swal2-html-container,
+[data-theme="dark"] .swal2-content {
+    color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .swal2-cancel {
+    background: #0f172a !important;
+    border-color: #334155 !important;
+    color: #94a3b8 !important;
+}
+
+/* ============================================
+   Scrollbar Styling
+   ============================================ */
+[data-theme="dark"] .policy-content-scroll::-webkit-scrollbar-track {
+    background: #0f172a;
+}
+
+[data-theme="dark"] .policy-content-scroll::-webkit-scrollbar-thumb {
+    background: #334155;
+}
+
+[data-theme="dark"] .policy-content-scroll::-webkit-scrollbar-thumb:hover {
+    background: #4b5563;
+}

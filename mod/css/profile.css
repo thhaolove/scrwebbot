@@ -1,0 +1,1606 @@
+/* ========================================
+   Profile & Security Pages CSS
+   ======================================== */
+
+/* ========================================
+   Profile Page Styles
+   ======================================== */
+
+.profile-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.profile-info-item {
+    padding: 16px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.profile-info-item:hover {
+    background: #fff;
+    border-color: var(--primary);
+    box-shadow: 0 2px 8px rgba(var(--primary-rgb), 0.1);
+}
+
+.profile-info-label {
+    font-size: 13px;
+    color: #718096;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
+}
+
+.profile-info-label i {
+    color: var(--primary);
+    font-size: 14px;
+}
+
+.profile-info-value {
+    font-size: 15px;
+    color: #2d3748;
+    font-weight: 600;
+    word-break: break-word;
+}
+
+/* Wallet Section */
+.wallet-modern-showcase {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary1) 100%);
+    border-radius: 16px;
+    padding: 32px;
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(var(--primary-rgb), 0.3);
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.wallet-modern-showcase::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.wallet-modern-showcase::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+}
+
+.wallet-modern-label {
+    font-size: 14px;
+    opacity: 0.9;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+}
+
+.wallet-modern-amount {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.wallet-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+    position: relative;
+    z-index: 1;
+}
+
+.wallet-stat-item {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 16px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.wallet-stat-label {
+    font-size: 12px;
+    opacity: 0.9;
+    margin-bottom: 6px;
+}
+
+.wallet-stat-value {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* Edit Modal */
+.profile-edit-modal .modal-form {
+    padding: 32px;
+}
+
+.profile-edit-modal .form-title h3 {
+    color: var(--heading);
+    margin-bottom: 24px;
+    font-size: 22px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-edit-modal .form-title h3 i {
+    color: var(--primary);
+}
+
+.profile-edit-modal .form-group {
+    margin-bottom: 20px;
+}
+
+.profile-edit-modal .form-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.profile-edit-modal .form-label i {
+    color: var(--primary);
+    font-size: 14px;
+}
+
+.profile-edit-modal .form-control {
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.profile-edit-modal .form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.1);
+}
+
+.profile-save-btn {
+    width: 100%;
+    padding: 14px 32px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary1) 100%);
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.3);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.profile-save-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(var(--primary-rgb), 0.4);
+}
+
+.profile-save-btn:active {
+    transform: translateY(0);
+}
+
+.profile-save-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ========================================
+   Security Page Styles
+   ======================================== */
+
+.security-setting-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.security-setting-item:hover {
+    background: #fff;
+    border-color: var(--primary);
+    box-shadow: 0 2px 8px rgba(var(--primary-rgb), 0.1);
+}
+
+.security-setting-item:last-child {
+    margin-bottom: 0;
+}
+
+.security-setting-info {
+    flex: 1;
+    padding-right: 16px;
+}
+
+.security-setting-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.security-setting-title i {
+    color: var(--primary);
+    font-size: 16px;
+}
+
+.security-setting-desc {
+    font-size: 12px;
+    color: #718096;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.security-setting-toggle {
+    flex-shrink: 0;
+}
+
+/* Enhanced Toggle Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #cbd5e0;
+    transition: 0.3s;
+    border-radius: 24px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+input:checked+.slider {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary1) 100%);
+}
+
+input:checked+.slider:before {
+    transform: translateX(24px);
+}
+
+/* Update Button */
+.security-update-btn {
+    width: 100%;
+    max-width: 280px;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary1) 100%);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.3);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.security-update-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(var(--primary-rgb), 0.4);
+}
+
+.security-update-btn:active {
+    transform: translateY(0);
+}
+
+.security-update-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* 2FA Section */
+.twofa-section {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    padding: 18px;
+    border-radius: 8px;
+    border: 2px solid #bae6fd;
+}
+
+.twofa-qr-container {
+    background: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.twofa-qr-container svg {
+    max-width: 200px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.twofa-input-group {
+    margin-top: 16px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-style {
+    flex: 1;
+    max-width: 180px;
+    padding: 10px 14px;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 3px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.input-style:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.1);
+}
+
+.btn-save {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.btn-save:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.twofa-note {
+    background: #fef3c7;
+    padding: 12px;
+    border-radius: 6px;
+    border-left: 3px solid #f59e0b;
+    margin-top: 12px;
+}
+
+.twofa-note ul {
+    margin: 0;
+    padding-left: 16px;
+    list-style: none;
+}
+
+.twofa-note ul li {
+    color: #92400e;
+    font-size: 12px;
+    margin-bottom: 6px;
+    line-height: 1.5;
+    position: relative;
+    padding-left: 20px;
+}
+
+.twofa-note ul li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #f59e0b;
+    font-weight: bold;
+}
+
+/* Sessions Section */
+.sessions-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.sessions-header h5 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.logout-all-btn {
+    padding: 8px 16px;
+    background: transparent;
+    border: 2px solid #dc3545;
+    border-radius: 6px;
+    color: #dc3545;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.logout-all-btn:hover {
+    background: #dc3545;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+}
+
+.sessions-list {
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+.sessions-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sessions-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.sessions-list::-webkit-scrollbar-thumb {
+    background: #cbd5e0;
+    border-radius: 10px;
+}
+
+.sessions-list::-webkit-scrollbar-thumb:hover {
+    background: #a0aec0;
+}
+
+.session-item {
+    display: flex;
+    align-items: center;
+    padding: 14px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background: #fff;
+    border: 2px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.session-item:hover {
+    border-color: var(--primary);
+    box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.1);
+    transform: translateY(-2px);
+}
+
+.session-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin-right: 12px;
+    position: relative;
+}
+
+.session-icon i {
+    font-size: 22px;
+}
+
+.session-info {
+    flex-grow: 1;
+    min-width: 0;
+}
+
+.session-info h6 {
+    margin: 0 0 6px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.session-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 12px;
+    color: #718096;
+}
+
+.session-detail-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.session-detail-item i {
+    font-size: 12px;
+    color: var(--primary);
+}
+
+.session-action {
+    flex-shrink: 0;
+    margin-left: 12px;
+}
+
+.badge-current {
+    padding: 8px 12px;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.btn-logout-session {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 14px;
+    border-radius: 6px;
+    background: transparent;
+    border: 2px solid #dc3545;
+    color: #dc3545;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-logout-session:hover {
+    background: #dc3545;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.empty-state i {
+    font-size: 48px;
+    color: #cbd5e0;
+    margin-bottom: 16px;
+}
+
+.empty-state p {
+    color: #718096;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* ========================================
+   Dark Mode Support
+   ======================================== */
+
+[data-theme="dark"] .profile-info-item,
+.dark-mode .profile-info-item,
+body.dark .profile-info-item {
+    background: #1e293b;
+    border-color: #334155;
+}
+
+[data-theme="dark"] .profile-info-item:hover,
+.dark-mode .profile-info-item:hover,
+body.dark .profile-info-item:hover {
+    background: #263445;
+}
+
+[data-theme="dark"] .profile-info-label,
+.dark-mode .profile-info-label,
+body.dark .profile-info-label {
+    color: #94a3b8;
+}
+
+[data-theme="dark"] .profile-info-value,
+.dark-mode .profile-info-value,
+body.dark .profile-info-value {
+    color: #f1f5f9;
+}
+
+[data-theme="dark"] .security-setting-item,
+.dark-mode .security-setting-item,
+body.dark .security-setting-item {
+    background: #1e293b;
+    border-color: #334155;
+}
+
+[data-theme="dark"] .security-setting-item:hover,
+.dark-mode .security-setting-item:hover,
+body.dark .security-setting-item:hover {
+    background: #263445;
+}
+
+[data-theme="dark"] .security-setting-title,
+.dark-mode .security-setting-title,
+body.dark .security-setting-title {
+    color: #f1f5f9;
+}
+
+[data-theme="dark"] .security-setting-desc,
+.dark-mode .security-setting-desc,
+body.dark .security-setting-desc {
+    color: #94a3b8;
+}
+
+[data-theme="dark"] .session-item,
+.dark-mode .session-item,
+body.dark .session-item {
+    background: #1e293b;
+    border-color: #334155;
+}
+
+[data-theme="dark"] .session-item:hover,
+.dark-mode .session-item:hover,
+body.dark .session-item:hover {
+    background: #263445;
+}
+
+[data-theme="dark"] .session-info h6,
+.dark-mode .session-info h6,
+body.dark .session-info h6 {
+    color: #f1f5f9;
+}
+
+[data-theme="dark"] .session-details,
+.dark-mode .session-details,
+body.dark .session-details {
+    color: #94a3b8;
+}
+
+[data-theme="dark"] .sessions-header h5,
+.dark-mode .sessions-header h5,
+body.dark .sessions-header h5 {
+    color: #f1f5f9;
+}
+
+[data-theme="dark"] .twofa-section,
+.dark-mode .twofa-section,
+body.dark .twofa-section {
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+    border-color: rgba(14, 165, 233, 0.3);
+}
+
+[data-theme="dark"] .twofa-qr-container,
+.dark-mode .twofa-qr-container,
+body.dark .twofa-qr-container {
+    background: #1e293b;
+}
+
+[data-theme="dark"] .input-style,
+.dark-mode .input-style,
+body.dark .input-style {
+    background: #1e293b;
+    border-color: #475569;
+    color: #f1f5f9;
+}
+
+[data-theme="dark"] .twofa-note,
+.dark-mode .twofa-note,
+body.dark .twofa-note {
+    background: rgba(245, 158, 11, 0.15);
+}
+
+[data-theme="dark"] .twofa-note ul li,
+.dark-mode .twofa-note ul li,
+body.dark .twofa-note ul li {
+    color: #fbbf24;
+}
+
+[data-theme="dark"] .empty-state i,
+.dark-mode .empty-state i,
+body.dark .empty-state i {
+    color: #475569;
+}
+
+[data-theme="dark"] .empty-state p,
+.dark-mode .empty-state p,
+body.dark .empty-state p {
+    color: #94a3b8;
+}
+
+[data-theme="dark"] .profile-edit-modal .form-title h3,
+.dark-mode .profile-edit-modal .form-title h3,
+body.dark .profile-edit-modal .form-title h3 {
+    color: #f1f5f9;
+}
+
+[data-theme="dark"] .profile-edit-modal .form-label,
+.dark-mode .profile-edit-modal .form-label,
+body.dark .profile-edit-modal .form-label {
+    color: #e2e8f0;
+}
+
+[data-theme="dark"] .profile-edit-modal .form-control,
+.dark-mode .profile-edit-modal .form-control,
+body.dark .profile-edit-modal .form-control {
+    background: #0f172a;
+    border-color: #475569;
+    color: #f1f5f9;
+}
+
+[data-theme="dark"] .profile-edit-modal .modal-content,
+.dark-mode .profile-edit-modal .modal-content,
+body.dark .profile-edit-modal .modal-content {
+    background: #1e293b;
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
+
+@media (max-width: 768px) {
+    .wallet-modern-amount {
+        font-size: 28px;
+    }
+
+    .wallet-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wallet-modern-showcase {
+        padding: 24px;
+    }
+
+    .security-setting-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .security-setting-info {
+        padding-right: 0;
+    }
+
+    .session-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .session-action {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .btn-logout-session,
+    .badge-current {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .sessions-header {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+
+    .logout-all-btn {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .twofa-input-group {
+        flex-direction: column;
+    }
+
+    .input-style {
+        max-width: 100%;
+    }
+
+    .btn-save {
+        width: 100%;
+    }
+}
+
+/* ========================================
+   Custom Modal (Pure JS)
+   ======================================== */
+
+.custom-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1050;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-modal-overlay.active {
+    display: flex;
+}
+
+.custom-modal {
+    background: var(--bg-card, #fff);
+    border-radius: 12px;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.custom-modal-header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary1) 100%);
+    color: white;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.custom-modal-header h5 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #fff;
+}
+
+.custom-modal-header h5 i {
+    color: #fff;
+}
+
+.custom-modal-close {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.custom-modal-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.custom-modal-body {
+    padding: 20px;
+}
+
+.custom-form-group {
+    margin-bottom: 16px;
+}
+
+.custom-form-group:last-child {
+    margin-bottom: 0;
+}
+
+.custom-form-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-primary, #2d3748);
+    font-size: 14px;
+}
+
+.custom-form-label i {
+    color: var(--primary);
+    margin-right: 6px;
+}
+
+.custom-form-input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid var(--border-color, #e2e8f0);
+    border-radius: 8px;
+    font-size: 15px;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+    background: var(--input-bg, #fff);
+    color: var(--text-primary, #2d3748);
+}
+
+.custom-form-input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.custom-modal-footer {
+    padding: 16px 20px;
+    background: var(--bg-tertiary, #f8f9fa);
+    border-top: 1px solid var(--border-color, #e5e7eb);
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.custom-btn {
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: none;
+    transition: all 0.2s;
+}
+
+.custom-btn-secondary {
+    background: #6b7280;
+    color: white;
+}
+
+.custom-btn-secondary:hover {
+    background: #4b5563;
+}
+
+.custom-btn-primary {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary1) 100%);
+    color: white;
+}
+
+.custom-btn-primary:hover {
+    opacity: 0.9;
+}
+
+/* ========================================
+   Telegram Link Modal - Premium Design
+   ======================================== */
+
+/* Telegram Modal Specific Styles */
+#telegramModalOverlay .custom-modal {
+    max-width: 520px;
+    border: 1px solid rgba(0, 136, 204, 0.2);
+    box-shadow:
+        0 25px 50px rgba(0, 136, 204, 0.15),
+        0 0 0 1px rgba(0, 136, 204, 0.1);
+}
+
+#telegramModalOverlay .custom-modal-header {
+    background: linear-gradient(135deg, #0088cc 0%, #00aced 50%, #33c3f0 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+#telegramModalOverlay .custom-modal-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+#telegramModalOverlay .custom-modal-header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* Linked Status Section */
+.telegram-linked-status {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(5, 150, 105, 0.05) 100%);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    border-radius: 16px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.telegram-linked-status::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #10b981, #06d6a0, #10b981);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite linear;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.telegram-avatar {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #0088cc 0%, #00aced 50%, #33c3f0 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 26px;
+    box-shadow:
+        0 8px 20px rgba(0, 136, 204, 0.35),
+        0 0 0 4px rgba(0, 136, 204, 0.1);
+    animation: floatIcon 3s ease-in-out infinite;
+    position: relative;
+}
+
+.telegram-avatar::after {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    border: 2px dashed rgba(0, 136, 204, 0.3);
+    animation: rotateBorder 10s linear infinite;
+}
+
+@keyframes floatIcon {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+@keyframes rotateBorder {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.telegram-linked-status h6 {
+    font-weight: 700;
+    letter-spacing: -0.2px;
+}
+
+.telegram-linked-status .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Link Guide Section */
+.telegram-link-guide {
+    position: relative;
+}
+
+.telegram-link-guide .alert-info {
+    background: linear-gradient(135deg, rgba(0, 136, 204, 0.08) 0%, rgba(51, 195, 240, 0.05) 100%);
+    border-radius: 14px;
+    padding: 18px;
+    border: 1px solid rgba(0, 136, 204, 0.2) !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.telegram-link-guide .alert-info .fa-circle-info {
+    color: #0088cc;
+    filter: drop-shadow(0 2px 4px rgba(0, 136, 204, 0.3));
+}
+
+.telegram-link-guide .alert-info strong {
+    color: #0077b3;
+    font-size: 14px;
+}
+
+.telegram-link-guide .alert-info ul {
+    font-size: 13px;
+}
+
+.telegram-link-guide .alert-info ul li {
+    padding: 4px 0;
+    color: #4a5568;
+    position: relative;
+}
+
+.telegram-link-guide .alert-info ul li::marker {
+    color: #0088cc;
+}
+
+.telegram-link-guide>h6 {
+    font-weight: 700;
+    color: #2d3748;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.telegram-link-guide>h6 i {
+    color: #0088cc;
+}
+
+/* Steps */
+.telegram-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+}
+
+.telegram-steps::before {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 35px;
+    bottom: 45px;
+    width: 2px;
+    background: linear-gradient(180deg, #0088cc 0%, #00aced 50%, #33c3f0 100%);
+    border-radius: 2px;
+    opacity: 0.4;
+}
+
+.telegram-step {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 16px;
+    margin: 0 -16px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.telegram-step:hover {
+    background: rgba(0, 136, 204, 0.04);
+}
+
+.step-number {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    background: linear-gradient(135deg, #0088cc 0%, #00aced 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 13px;
+    box-shadow:
+        0 4px 12px rgba(0, 136, 204, 0.35),
+        0 0 0 3px rgba(0, 136, 204, 0.1);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.telegram-step:hover .step-number {
+    transform: scale(1.1);
+    box-shadow:
+        0 6px 16px rgba(0, 136, 204, 0.4),
+        0 0 0 5px rgba(0, 136, 204, 0.15);
+}
+
+.step-content {
+    flex: 1;
+    padding-top: 3px;
+}
+
+.step-content strong {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #2d3748;
+}
+
+.step-content p {
+    line-height: 1.5;
+}
+
+/* Open Bot Button */
+#btnOpenTelegramBot {
+    background: linear-gradient(135deg, #0088cc 0%, #00aced 100%);
+    border: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 136, 204, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+#btnOpenTelegramBot::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+#btnOpenTelegramBot:hover::before {
+    left: 100%;
+}
+
+#btnOpenTelegramBot:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 136, 204, 0.4);
+}
+
+/* Link Code Input */
+#telegramLinkCode {
+    font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+    border-color: rgba(0, 136, 204, 0.2);
+    font-weight: 600;
+    color: #0077b3;
+}
+
+#telegramLinkCode:focus {
+    border-color: #0088cc;
+    box-shadow: 0 0 0 3px rgba(0, 136, 204, 0.1);
+}
+
+#btnCopyLinkCode {
+    border-color: #0088cc;
+    color: #0088cc;
+    transition: all 0.2s ease;
+}
+
+#btnCopyLinkCode:hover {
+    background: #0088cc;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Security Warning */
+.step-content .text-danger {
+    background: linear-gradient(135deg, rgba(220, 38, 38, 0.08) 0%, rgba(239, 68, 68, 0.05) 100%);
+    padding: 8px 12px;
+    border-radius: 8px;
+    border-left: 3px solid #dc2626;
+    font-weight: 500;
+}
+
+/* Telegram Modal Footer */
+#telegramModalOverlay .custom-modal-footer {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+#telegramModalOverlay .custom-btn-primary {
+    background: linear-gradient(135deg, #0088cc 0%, #00aced 100%);
+    box-shadow: 0 4px 12px rgba(0, 136, 204, 0.25);
+}
+
+#telegramModalOverlay .custom-btn-primary:hover {
+    box-shadow: 0 6px 16px rgba(0, 136, 204, 0.35);
+    transform: translateY(-1px);
+}
+
+/* Unlink Button */
+#btnUnlinkTelegram {
+    border-radius: 10px;
+    padding: 10px 18px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+#btnUnlinkTelegram:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+}
+
+/* ========================================
+   Telegram Modal - Dark Mode
+   ======================================== */
+
+[data-theme="dark"] #telegramModalOverlay .custom-modal {
+    border-color: rgba(0, 172, 237, 0.2);
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(0, 172, 237, 0.15);
+}
+
+[data-theme="dark"] .telegram-linked-status {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(5, 150, 105, 0.08) 100%);
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+[data-theme="dark"] .telegram-avatar {
+    box-shadow:
+        0 8px 24px rgba(0, 136, 204, 0.4),
+        0 0 0 4px rgba(0, 172, 237, 0.15);
+}
+
+[data-theme="dark"] .telegram-avatar::after {
+    border-color: rgba(0, 172, 237, 0.4);
+}
+
+[data-theme="dark"] .telegram-link-guide .alert-info {
+    background: linear-gradient(135deg, rgba(0, 136, 204, 0.12) 0%, rgba(51, 195, 240, 0.08) 100%);
+    border-color: rgba(0, 172, 237, 0.3) !important;
+}
+
+[data-theme="dark"] .telegram-link-guide .alert-info strong {
+    color: #33c3f0;
+}
+
+[data-theme="dark"] .telegram-link-guide .alert-info ul li {
+    color: #94a3b8;
+}
+
+[data-theme="dark"] .telegram-link-guide>h6 {
+    color: #f1f5f9;
+}
+
+[data-theme="dark"] .telegram-link-guide>h6 i {
+    color: #33c3f0;
+}
+
+[data-theme="dark"] .telegram-steps::before {
+    opacity: 0.5;
+}
+
+[data-theme="dark"] .telegram-step:hover {
+    background: rgba(0, 172, 237, 0.08);
+}
+
+[data-theme="dark"] .step-number {
+    box-shadow:
+        0 4px 16px rgba(0, 172, 237, 0.4),
+        0 0 0 3px rgba(0, 172, 237, 0.15);
+}
+
+[data-theme="dark"] .telegram-step:hover .step-number {
+    box-shadow:
+        0 6px 20px rgba(0, 172, 237, 0.5),
+        0 0 0 5px rgba(0, 172, 237, 0.2);
+}
+
+[data-theme="dark"] .step-content strong {
+    color: #f1f5f9;
+}
+
+[data-theme="dark"] #telegramLinkCode {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border-color: rgba(0, 172, 237, 0.3);
+    color: #33c3f0;
+}
+
+[data-theme="dark"] #telegramLinkCode:focus {
+    border-color: #0088cc;
+    box-shadow: 0 0 0 3px rgba(0, 172, 237, 0.2);
+}
+
+[data-theme="dark"] #btnCopyLinkCode {
+    border-color: #33c3f0;
+    color: #33c3f0;
+}
+
+[data-theme="dark"] #btnCopyLinkCode:hover {
+    background: #0088cc;
+    border-color: #0088cc;
+}
+
+[data-theme="dark"] .step-content .text-danger {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.15) 0%, rgba(220, 38, 38, 0.1) 100%);
+    border-left-color: #f87171;
+    color: #fca5a5;
+}
+
+[data-theme="dark"] #telegramModalOverlay .custom-modal-footer {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
+
+[data-theme="dark"] #telegramModalOverlay .custom-btn-primary {
+    box-shadow: 0 4px 16px rgba(0, 172, 237, 0.35);
+}
+
+[data-theme="dark"] #telegramModalOverlay .custom-btn-primary:hover {
+    box-shadow: 0 6px 20px rgba(0, 172, 237, 0.45);
+}
+
+[data-theme="dark"] #btnUnlinkTelegram:hover {
+    box-shadow: 0 4px 16px rgba(239, 68, 68, 0.4);
+}
+
+/* Dark Mode - Modal & Telegram */
+[data-theme="dark"] .custom-modal {
+    background: var(--bg-card);
+}
+
+[data-theme="dark"] .custom-modal-footer {
+    background: var(--bg-body);
+}
+
+[data-theme="dark"] .custom-btn-secondary {
+    background: #475569;
+}
+
+/* ========================================
+   Mobile Modal Scroll Fix
+   ======================================== */
+
+/* Ngăn body scroll khi modal active */
+body.modal-open {
+    overflow: hidden !important;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+/* Modal overlay scroll on mobile */
+.custom-modal-overlay {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Modal với chiều cao tối đa trên mobile */
+.custom-modal {
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+/* Modal body có thể scroll */
+.custom-modal-body {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    flex: 1;
+    max-height: calc(90vh - 140px);
+}
+
+/* Responsive cho modal trên mobile */
+@media (max-width: 576px) {
+    .custom-modal-overlay {
+        padding: 10px;
+        align-items: flex-start;
+    }
+    
+    .custom-modal {
+        width: 100%;
+        max-width: 100%;
+        max-height: 95vh;
+        border-radius: 12px;
+        margin-top: 10px;
+    }
+    
+    .custom-modal-body {
+        max-height: calc(95vh - 130px);
+        padding: 16px;
+    }
+    
+    .custom-modal-header {
+        padding: 14px 16px;
+    }
+    
+    .custom-modal-footer {
+        padding: 12px 16px;
+        flex-wrap: wrap;
+    }
+    
+    .custom-modal-footer .custom-btn {
+        flex: 1;
+        min-width: 120px;
+        justify-content: center;
+    }
+    
+    /* Telegram modal specific mobile fixes */
+    #telegramModalOverlay .custom-modal {
+        max-width: 100%;
+    }
+    
+    .telegram-step {
+        padding: 12px;
+        margin: 0 -12px;
+    }
+    
+    .telegram-steps::before {
+        left: 12px;
+    }
+    
+    .telegram-link-guide .alert-info {
+        padding: 14px;
+    }
+    
+    .step-content .input-group {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .step-content .input-group .form-control {
+        border-radius: 8px !important;
+        font-size: 12px;
+    }
+    
+    .step-content .input-group .btn {
+        border-radius: 8px !important;
+        width: 100%;
+    }
+}

@@ -1,0 +1,770 @@
+/* ============================================
+   FLASH SALE WIDGET
+   ============================================ */
+
+/* Main Section */
+.flashsale-section {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 50%, #991b1b 100%);
+    border-radius: 12px;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid rgba(220, 38, 38, 0.3);
+    margin-top: 25px;
+}
+
+/* Header */
+.flashsale-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+    background: rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.flashsale-header-content {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.flashsale-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.flashsale-logo {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: logoPulse 1.5s ease-in-out infinite;
+}
+
+.flashsale-logo i {
+    font-size: 1rem;
+    color: #fff;
+}
+
+@keyframes logoPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.4);
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px 5px rgba(251, 191, 36, 0.3);
+    }
+}
+
+.flashsale-title-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.flashsale-title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #fff;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.flashsale-subtitle {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 1px;
+}
+
+/* Timer */
+.flashsale-timer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.timer-label {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+.timer-countdown {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.timer-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 4px 8px;
+    border-radius: 6px;
+    min-width: 38px;
+    backdrop-filter: blur(4px);
+}
+
+.timer-number {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+}
+
+.timer-text {
+    font-size: 0.5rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    margin-top: 2px;
+    letter-spacing: 0.3px;
+}
+
+.timer-colon {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 10px;
+    animation: colonBlink 1s step-end infinite;
+}
+
+@keyframes colonBlink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+}
+
+/* View All Button */
+.flashsale-viewall {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.flashsale-viewall:hover {
+    background: rgba(255, 255, 255, 0.25);
+    color: #fff;
+    transform: translateX(3px);
+}
+
+.flashsale-viewall i {
+    font-size: 0.7rem;
+    transition: transform 0.2s ease;
+}
+
+.flashsale-viewall:hover i {
+    transform: translateX(3px);
+}
+
+/* Carousel Wrapper */
+.flashsale-carousel-wrapper {
+    position: relative;
+    padding: 12px 16px;
+    background: #f7f8fa;
+}
+
+/* Navigation Buttons */
+.flashsale-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    color: #374151;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.flashsale-nav:hover {
+    background: #dc2626;
+    color: #fff;
+    border-color: #dc2626;
+}
+
+.flashsale-nav-prev {
+    left: 8px;
+}
+
+.flashsale-nav-next {
+    right: 8px;
+}
+
+.flashsale-nav i {
+    font-size: 1rem;
+}
+
+/* Carousel */
+.flashsale-carousel {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 2px;
+}
+
+.flashsale-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+/* Carousel Item */
+.flashsale-item {
+    flex: 0 0 calc(25% - 9px);
+    min-width: 200px;
+    max-width: calc(25% - 9px);
+}
+
+/* Product Card override for Flash Sale carousel */
+.flashsale-item .product-card {
+    height: 100%;
+    margin-bottom: 0;
+}
+
+/* Price inline for Flash Sale */
+.flashsale-item .product-card-price {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Product Card */
+.flashsale-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #f3f4f6;
+    transition: all 0.25s ease;
+    height: 100%;
+}
+
+.flashsale-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(220, 38, 38, 0.15);
+    border-color: #fecaca;
+}
+
+/* Card Image */
+.flashsale-card-image {
+    position: relative;
+    width: 100%;
+    padding-top: 62.5%;
+    /* 16:10 aspect ratio */
+    background: #f9fafb;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.flashsale-card-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.flashsale-card:hover .flashsale-card-image img {
+    transform: scale(1.05);
+}
+
+.flashsale-card-image img.lazy {
+    filter: blur(8px);
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.flashsale-card-image img.lazy.loaded {
+    filter: blur(0);
+}
+
+.flashsale-image-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f3f4f6;
+    color: #d1d5db;
+    font-size: 2rem;
+}
+
+/* Discount Badge */
+.flashsale-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    padding: 4px 8px;
+    border-radius: 0 0 0 8px;
+    z-index: 2;
+}
+
+.badge-percent {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #fff;
+}
+
+/* Card Content */
+.flashsale-card-content {
+    padding: 8px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.flashsale-card-name {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0;
+    line-height: 1.35;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 2.1em;
+}
+
+.flashsale-card:hover .flashsale-card-name {
+    color: #dc2626;
+}
+
+/* Pricing */
+.flashsale-card-pricing {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.flashsale-price-new {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #dc2626;
+}
+
+.flashsale-price-old {
+    font-size: 0.7rem;
+    color: #9ca3af;
+    text-decoration: line-through;
+}
+
+/* Stock Progress */
+.flashsale-stock {
+    margin-top: auto;
+}
+
+.flashsale-stock-bar {
+    width: 100%;
+    height: 14px;
+    background: linear-gradient(90deg, #fef2f2, #fee2e2);
+    border-radius: 7px;
+    overflow: hidden;
+    position: relative;
+}
+
+.flashsale-stock-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #f87171, #dc2626);
+    border-radius: 7px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-width: 20px;
+    transition: width 0.5s ease;
+}
+
+.flashsale-stock-fire {
+    font-size: 0.55rem;
+    margin-right: 3px;
+    animation: fireBounce 0.5s ease infinite alternate;
+}
+
+@keyframes fireBounce {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-1px);
+    }
+}
+
+.flashsale-stock-text {
+    display: block;
+    text-align: center;
+    font-size: 0.65rem;
+    color: #dc2626;
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+/* Meta Info */
+.flashsale-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 4px;
+    border-top: 1px solid #f3f4f6;
+}
+
+.meta-sold {
+    font-size: 0.68rem;
+    color: #6b7280;
+}
+
+.meta-delivery {
+    font-size: 0.7rem;
+    color: #6b7280;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.meta-delivery.instant {
+    color: #10b981;
+}
+
+.meta-delivery i {
+    font-size: 0.6rem;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 1200px) {
+    .flashsale-item {
+        flex: 0 0 calc(25% - 9px);
+        min-width: 150px;
+        max-width: calc(25% - 9px);
+    }
+}
+
+@media (max-width: 768px) {
+    .flashsale-header {
+        padding: 12px 16px;
+    }
+
+    .flashsale-header-content {
+        gap: 16px;
+        width: 100%;
+    }
+
+    .flashsale-logo {
+        width: 38px;
+        height: 38px;
+    }
+
+    .flashsale-logo i {
+        font-size: 1.1rem;
+    }
+
+    .flashsale-title {
+        font-size: 1.1rem;
+    }
+
+    .timer-block {
+        padding: 5px 8px;
+        min-width: 40px;
+    }
+
+    .timer-number {
+        font-size: 1rem;
+    }
+
+    .flashsale-carousel-wrapper {
+        padding: 16px;
+    }
+
+    .flashsale-item {
+        flex: 0 0 calc(50% - 8px);
+        min-width: 150px;
+        max-width: calc(50% - 8px);
+    }
+
+    .flashsale-nav {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .flashsale-header {
+        flex-direction: column;
+        padding: 10px 12px;
+        gap: 6px;
+    }
+
+    .flashsale-header-content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .flashsale-brand {
+        gap: 8px;
+    }
+
+    .flashsale-logo {
+        width: 28px;
+        height: 28px;
+    }
+
+    .flashsale-logo i {
+        font-size: 0.85rem;
+    }
+
+    .flashsale-title {
+        font-size: 0.95rem;
+    }
+
+    .flashsale-subtitle {
+        font-size: 0.6rem;
+    }
+
+    .flashsale-timer {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 6px;
+        background: rgba(0, 0, 0, 0.15);
+        padding: 6px 10px;
+        border-radius: 6px;
+    }
+
+    .timer-label {
+        font-size: 0.7rem;
+        margin-right: 4px;
+    }
+
+    .timer-countdown {
+        gap: 3px;
+    }
+
+    .timer-block {
+        padding: 2px 6px;
+        min-width: 28px;
+        border-radius: 4px;
+    }
+
+    .timer-number {
+        font-size: 0.8rem;
+    }
+
+    .timer-text {
+        display: none;
+    }
+
+    .timer-colon {
+        font-size: 0.8rem;
+        margin-bottom: 0;
+    }
+
+    .flashsale-viewall {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .flashsale-carousel-wrapper {
+        padding: 10px 12px;
+    }
+
+    .flashsale-carousel {
+        gap: 10px;
+        scroll-padding-left: 12px;
+        scroll-padding-right: 12px;
+        padding-right: 12px;
+    }
+
+    .flashsale-item {
+        flex: 0 0 calc(50% - 6px);
+        min-width: 140px;
+        max-width: calc(50% - 6px);
+    }
+
+    .flashsale-card {
+        border-radius: 10px;
+    }
+
+    .flashsale-card-image {
+        border-radius: 6px;
+    }
+
+    .flashsale-card-content {
+        padding: 8px;
+        gap: 3px;
+    }
+
+    .flashsale-card-name {
+        font-size: 0.75rem;
+        min-height: 2em;
+    }
+
+    .flashsale-price-new {
+        font-size: 0.9rem;
+    }
+
+    .flashsale-price-old {
+        font-size: 0.65rem;
+    }
+
+    .flashsale-stock-bar {
+        height: 12px;
+        border-radius: 6px;
+    }
+
+    .flashsale-stock-fill {
+        border-radius: 6px;
+    }
+
+    .flashsale-stock-text {
+        font-size: 0.6rem;
+    }
+
+    .meta-sold {
+        font-size: 0.62rem;
+    }
+
+    .meta-delivery {
+        font-size: 0.62rem;
+    }
+
+    .meta-delivery i {
+        font-size: 0.55rem;
+    }
+}
+
+/* ============================================
+   DARK MODE
+   ============================================ */
+
+[data-theme="dark"] .flashsale-section {
+    background: linear-gradient(135deg, #991b1b 0%, #7f1d1d 50%, #450a0a 100%);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .flashsale-carousel-wrapper {
+    background: var(--bg-body);
+}
+
+[data-theme="dark"] .flashsale-card {
+    background: var(--bg-secondary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .flashsale-card:hover {
+    border-color: rgba(220, 38, 38, 0.4);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .flashsale-card-image {
+    background: var(--bg-tertiary);
+}
+
+[data-theme="dark"] .flashsale-card-name {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .flashsale-card:hover .flashsale-card-name {
+    color: #f87171;
+}
+
+[data-theme="dark"] .flashsale-price-new {
+    color: #f87171;
+}
+
+[data-theme="dark"] .flashsale-price-old {
+    color: #6b7280;
+}
+
+[data-theme="dark"] .flashsale-stock-bar {
+    background: rgba(220, 38, 38, 0.15);
+}
+
+[data-theme="dark"] .flashsale-stock-text {
+    color: #f87171;
+}
+
+[data-theme="dark"] .flashsale-meta {
+    border-top-color: var(--border-color);
+}
+
+[data-theme="dark"] .meta-sold {
+    color: var(--text-muted);
+}
+
+[data-theme="dark"] .meta-delivery {
+    color: var(--text-muted);
+}
+
+[data-theme="dark"] .meta-delivery.instant {
+    color: #34d399;
+}
+
+[data-theme="dark"] .flashsale-nav {
+    background: var(--bg-card);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .flashsale-nav:hover {
+    background: #dc2626;
+    color: #fff;
+    border-color: #dc2626;
+}
+
+[data-theme="dark"] .flashsale-image-placeholder {
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+}

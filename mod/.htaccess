@@ -1,0 +1,21 @@
+# Cho phép tất cả static files trong thư mục này
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+</IfModule>
+
+# Đảm bảo CSS/JS được phép truy cập
+<FilesMatch "\.(css|js|jpg|jpeg|png|gif|ico|svg|woff|woff2|ttf|eot|map)$">
+    Order allow,deny
+    Allow from all
+    Satisfy any
+</FilesMatch>
+
+# Disable ModSecurity cho thư mục này (nếu hosting hỗ trợ)
+<IfModule mod_security.c>
+    SecFilterEngine Off
+    SecFilterScanPOST Off
+</IfModule>
+
+<IfModule mod_security2.c>
+    SecRuleEngine Off
+</IfModule>
