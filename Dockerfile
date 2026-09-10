@@ -12,18 +12,18 @@ RUN apt-get update && apt-get install -y \
 
 WORKDIR /var/www/html
 
-# Copy toàn bộ mã nguồn vào
+# Copy toàn bộ mã nguồn vào container
 COPY . .
 
-# Cấp quyền đọc/ghi và quyền thực thi cho toàn bộ thư mục web để PHP-FPM đọc được
+# Cấp quyền cho Nginx và PHP đọc/ghi thư mục
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 755 /var/www/html
 
-# Cấu hình Nginx
+# Cấu hình Nginx trỏ thẳng vào thư mục public chứa index.php
 RUN echo 'server {\n\
     listen 80;\n\
     index index.php index.html;\n\
-    root /var/www/html;\n\
+    root /var/www/html/public;\n\
     location / {\n\
         try_files $uri $uri/ /index.php?$query_string;\n\
     }\n\
@@ -37,4 +37,5 @@ RUN echo 'server {\n\
 
 EXPOSE 80
 
+# Khởi động Nginx và PHP-FPM
 CMD service nginx start && php-fpm
